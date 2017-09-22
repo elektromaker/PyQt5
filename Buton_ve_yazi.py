@@ -1,4 +1,4 @@
-<import sys
+import sys
 from PyQt5.QtWidgets import QWidget, QPushButton, QApplication, QLabel, QVBoxLayout
 from PyQt5.QtCore import QCoreApplication
 
