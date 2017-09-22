@@ -1,14 +1,22 @@
+#-*-coding:utf-8-*-
 import sys
-from PyQt5.QtWidgets import QMainWindow, QPushButton, QApplication
+import RPi.GPIO as GPIO
+import time
+from PyQt5.QtWidgets import QMainWindow, QPushButton, QApplication, QLabel
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(3, GPIO.OUT)
 
-
-class Example(QMainWindow):
+class Example(QMainWindow, QLabel):
     def __init__(self):
         super().__init__()
 
         self.initUI()
 
     def initUI(self):
+        etiket = QLabel('<font color="black" size="+1">Lamba kontrol butonları</font>', self)
+        etiket.resize(etiket.sizeHint())
+        etiket.move(10, 10)
+        
         btn1 = QPushButton("ON", self)
         btn1.move(30, 50)
 
@@ -25,11 +33,13 @@ class Example(QMainWindow):
         self.show()
 
     def ONClicked(self):
+        GPIO.output(3,1)
         sender = self.sender()
         self.statusBar().showMessage(sender.text() + ' Led yandı')
 
 
     def OFFClicked(self):
+        GPIO.output(3,0)
         sender = self.sender()
         self.statusBar().showMessage(sender.text() + ' Led söndü')
 
