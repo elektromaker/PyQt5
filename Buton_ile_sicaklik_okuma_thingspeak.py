@@ -14,9 +14,9 @@ from PyQt5.QtWidgets import (QWidget, QPushButton, QLineEdit,
 import sys
 
 import thingspeak #Thingspeak modülünü önceden python'a yüklemek gerekiyor.
-channel_id = 59878 # Kendi kanal ID'nizi yazınız
-write_key  = "0C074K0QF9M1NKL1" # Kendi WRITE KEY değerinizi yazınız.
-read_key    = "9UDLSXZ2F411ZUP5" # Kendi YOUR API KEY değerinizi yazınız.
+channel_id =  # Kendi kanal ID'nizi yazınız
+write_key  = " " # Kendi WRITE KEY değerinizi yazınız.
+read_key    = " " # Kendi YOUR API KEY değerinizi yazınız.
 channel = thingspeak.Channel(id=channel_id,api_key=read_key)
 
 class Example(QWidget):
